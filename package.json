@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/charles-zh/saveSvgAsPng2"
+    "url": "https://github.com/charles-zh/save-svg-png-ext"
   },
   "keywords": [
     "svg",
@@ -21,9 +21,9 @@
   "author": "Eric Shull, charles-zh",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/charles-zh/saveSvgAsPng2/issues"
+    "url": "https://github.com/charles-zh/save-svg-png-ext/issues"
   },
-  "homepage": "https://github.com/charles-zh/saveSvgAsPng2",
+  "homepage": "https://github.com/charles-zh/save-svg-png-ext",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",

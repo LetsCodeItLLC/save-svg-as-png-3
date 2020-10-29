@@ -1,5 +1,5 @@
 {
-  "name": "saveSvgPng2",
+  "name": "save-svg-png-ext",
   "version": "2.0.0",
   "description": "Convert a browser SVG to PNG and download it, no browser DataURL size limits",
   "main": "lib/saveSvgAsPng.js",

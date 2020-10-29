@@ -1,9 +1,10 @@
-# saveSvgAsPng
+# saveSvgAsPng2
+This project combined original code and fileSaver's code. So, the download method has enhanced and no DataURL size limits in the browser.
 
 ## Installation
 
 ```
-npm install save-svg-as-png
+npm install saveSvgPng2
 ```
 
 ## Prerequisites
@@ -71,6 +72,6 @@ npm test
 
 ## Support
 
-[Chrome limits data URIs to 2MB](http://stackoverflow.com/questions/695151/data-protocol-url-size-limitations/41755526#41755526), so you may have trouble generating PNGs beyod a certain size.
+<del>[Chrome limits data URIs to 2MB](http://stackoverflow.com/questions/695151/data-protocol-url-size-limitations/41755526#41755526) </del> - No, I have changed the code, using other methods to get the downloading URL. That is the reason I forked this project. The original project is on read-only state.
 
 Internet Explorer will only work if [canvg](https://github.com/canvg/canvg) is passed in, otherwise it will throw a `SecurityError` when calling `toDataURL` on a canvas that's been written to. [canvg](https://github.com/canvg/canvg) may have it's own issues with SVG support, so make sure to test the output.

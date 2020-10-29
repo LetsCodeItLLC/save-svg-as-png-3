@@ -1,15 +1,15 @@
-# saveSvgAsPng2
+# save-svg-png-ext
 This project combined original code and fileSaver's code. So, the download method has enhanced and no DataURL size limits in the browser.
 
 ## Installation
 
 ```
-npm install saveSvgPng2
+npm install save-svg-png-ext
 ```
 
 ## Prerequisites
 
-SaveSvgAsPng relies on JavaScript promises, so any browsers that don't natively support the standard `Promise` object will need to have a polyfill.
+save-svg-png-ext relies on JavaScript promises, so any browsers that don't natively support the standard `Promise` object will need to have a polyfill.
 
 ## Usage
 

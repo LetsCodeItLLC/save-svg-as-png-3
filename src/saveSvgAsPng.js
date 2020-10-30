@@ -520,8 +520,11 @@
             const context = canvas.getContext('2d');
             const pixelRatio = window.devicePixelRatio || 1;
 
-            canvas.width = width * pixelRatio;
-            canvas.height = height * pixelRatio;
+            // canvas maximum width & height limits: 65535 x 65535 (test in latest chrome)
+            const cWidth = width * pixelRatio;
+            const cHeight = height * pixelRatio;
+            canvas.width = cWidth > 65535 ? 65535: cWidth;
+            canvas.height = cHeight > 65535? 65535: cHeight;
             canvas.style.width = `${canvas.width}px`;
             canvas.style.height = `${canvas.height}px`;
             context.setTransform(pixelRatio, 0, 0, pixelRatio, 0, 0);
@@ -562,11 +565,12 @@
                 return new Promise((resolve, reject) => {
                     const image = new Image();
                     image.onload =  () => {
-                        resolve(convertToPng({
+                        const imgPromise = convertToPng({
                             src: image,
                             width: image.width,
                             height: image.height
-                        }));
+                        });
+                        resolve(imgPromise);
                     };
                     image.onerror = () => {
                         reject(`There was an error loading the data URI as an image on the following SVG\n${window.atob(uri.slice(26))}Open the following link to see browser's diagnosis\n${uri}`);

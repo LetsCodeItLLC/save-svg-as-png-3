@@ -1,6 +1,6 @@
 {
-  "name": "save-svg-png-ext",
-  "version": "2.0.3",
+  "name": "save-svg-as-png-3",
+  "version": "3.0.0",
   "description": "Convert a browser SVG to PNG and download it, no browser DataURL size limits",
   "main": "lib/saveSvgAsPng.js",
   "scripts": {
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/charles-zh/save-svg-png-ext"
+    "url": "https://github.com/LetsCodeItLLC/save-svg-as-png-3"
   },
   "keywords": [
     "svg",
@@ -18,12 +18,12 @@
     "graphics",
     "images"
   ],
-  "author": "Eric Shull, charles-zh",
+  "author": "Art Longbottom (@artokun)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/charles-zh/save-svg-png-ext/issues"
+    "url": "https://github.com/LetsCodeItLLC/save-svg-as-png-3/issues"
   },
-  "homepage": "https://github.com/charles-zh/save-svg-png-ext",
+  "homepage": "https://github.com/LetsCodeItLLC/save-svg-as-png-3",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",

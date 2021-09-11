@@ -1,15 +1,16 @@
-# save-svg-png-ext
-This project combined original code and fileSaver's code. So, the download method has enhanced and no DataURL size limits in the browser.
+# save-svg-as-png-3
+
+This project combined original code and fileSaver's code. So, the download method has enhanced and no DataURL size limits in the browser along with a slew of pending PRs on save-svg-as-png readonly account.
 
 ## Installation
 
 ```
-npm install save-svg-png-ext
+npm install save-svg-as-png-3
 ```
 
 ## Prerequisites
 
-save-svg-png-ext relies on JavaScript promises, so any browsers that don't natively support the standard `Promise` object will need to have a polyfill.
+save-svg-as-png-3 relies on JavaScript promises, so any browsers that don't natively support the standard `Promise` object will need to have a polyfill.
 
 ## Usage
 
@@ -24,7 +25,7 @@ The filename is the preferred filename when saving the image to the file system.
 If you want to scale the image up or down, you can pass a scale factor in an options object:
 
 ```javascript
-saveSvgAsPng(document.getElementById("diagram"), "diagram.png", {scale: 0.5});
+saveSvgAsPng(document.getElementById("diagram"), "diagram.png", { scale: 0.5 });
 ```
 
 Other options are documented below.
@@ -66,6 +67,7 @@ If you want to use TypeScript, necessary [type definitions](https://github.com/m
 ### Testing
 
 run tests with [tape](https://www.npmjs.com/package/tape)
+
 ```bash
 npm test
 ```

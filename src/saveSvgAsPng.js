@@ -38,7 +38,7 @@
       ? global
       : this;
 
-  if (typeof _global._global.navigator === "undefined") {
+  if (typeof _global.navigator === "undefined") {
     _global.navigator = {
       userAgent: "node",
     };
@@ -98,7 +98,7 @@
         "click",
         true,
         true,
-        window,
+        _global,
         0,
         0,
         0,
@@ -279,7 +279,7 @@
   const isExternal = (url) =>
     url &&
     url.lastIndexOf("http", 0) === 0 &&
-    url.lastIndexOf(window.location.host) === -1;
+    url.lastIndexOf(_global.location.host) === -1;
 
   const getFontMimeTypeFromUrl = (fontUrl) => {
     const formats = Object.keys(fontFormats)
@@ -297,7 +297,7 @@
     const bytes = new Uint8Array(buffer);
     for (let i = 0; i < bytes.byteLength; i++)
       binary += String.fromCharCode(bytes[i]);
-    return window.btoa(binary);
+    return _global.btoa(binary);
   };
 
   const getDimension = (el, clone, dim) => {
@@ -308,7 +308,7 @@
         parseInt(clone.getAttribute(dim))) ||
       el.getBoundingClientRect()[dim] ||
       parseInt(clone.style[dim]) ||
-      parseInt(window.getComputedStyle(el).getPropertyValue(dim));
+      parseInt(_global.getComputedStyle(el).getPropertyValue(dim));
     return typeof v === "undefined" || v === null || isNaN(parseFloat(v))
       ? 0
       : v;
@@ -338,7 +338,7 @@
     );
 
   const uriToBlob = (uri) => {
-    const byteString = window.atob(uri.split(",")[1]);
+    const byteString = _global.atob(uri.split(",")[1]);
     const mimeString = uri.split(",")[0].split(":")[1].split(";")[0];
     const buffer = new ArrayBuffer(byteString.length);
     const intArray = new Uint8Array(buffer);
@@ -501,7 +501,7 @@
       !_global.navigator.msSaveOrOpenBlob &&
       !("download" in document.createElement("a"))
     ) {
-      return { popup: window.open() };
+      return { popup: _global.open() };
     }
   };
 
@@ -606,7 +606,7 @@
   out$.svgAsDataUri = (el, options, done) => {
     requireDomNode(el);
     return out$.prepareSvg(el, options).then(({ src, width, height }) => {
-      const svgXml = `data:image/svg+xml;base64,${window.btoa(
+      const svgXml = `data:image/svg+xml;base64,${_global.btoa(
         reEncode(doctype + src)
       )}`;
       if (typeof done === "function") {
@@ -627,7 +627,7 @@
     const convertToPng = ({ src, width, height }) => {
       const canvas = document.createElement("canvas");
       const context = canvas.getContext("2d");
-      const pixelRatio = window.devicePixelRatio || 1;
+      const pixelRatio = _global.devicePixelRatio || 1;
 
       // canvas maximum width & height limits: 65535 x 65535 (test in latest chrome)
       const cWidth = width * pixelRatio;
@@ -689,7 +689,7 @@
           };
           image.onerror = () => {
             reject(
-              `There was an error loading the data URI as an image on the following SVG\n${window.atob(
+              `There was an error loading the data URI as an image on the following SVG\n${_global.atob(
                 uri.slice(26)
               )}Open the following link to see browser's diagnosis\n${uri}`
             );

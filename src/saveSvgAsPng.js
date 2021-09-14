@@ -606,6 +606,7 @@
   out$.svgAsDataUri = (el, options, done) => {
     requireDomNode(el);
     return out$.prepareSvg(el, options).then(({ src, width, height }) => {
+      src = src.replace(/(<img[^>]+)>/, "$1 ></img>");
       const svgXml = `data:image/svg+xml;base64,${_global.btoa(
         reEncode(doctype + src)
       )}`;
